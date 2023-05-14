@@ -80,9 +80,7 @@ resource "aws_instance" "web_server_az2" {
 }
 
 
-resource "aws_key_pair" "deployer" {
+resource "aws_key_pair" "aws-key" {
   key_name   = "id_rsa"
   public_key = file("/home/id_rsa.pub")
 }
-  
-
