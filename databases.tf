@@ -1,6 +1,6 @@
 # This block creates the databases using the "aws_db_instance" resource.
 # The MySQL engine is used and the instance class is set to "db.t2.micro", and 5GB of storage is allocated for each instance. 
-# The instances are deployed in the "eu-west-2" availability zone, and each instance is named using the "name" parameter with a unique index number.
+# The instances are deployed in the "eu-east-2" availability zone, and each instance is named using the "name" parameter with a unique index number.
 # A default username and password for the databases is set using the "username" and "password" parameters.
 
 
@@ -9,7 +9,7 @@ resource "aws_db_instance" "databasename" {
   engine = "mysql"
   instance_class = "db.t2.micro"
   allocated_storage = 5
-  availability_zone = "eu-west-2a"
+  availability_zone = "eu-east-1a"
   db_name = "database${count.index+1}"
   username = "admin"
   password = "password"
@@ -26,7 +26,7 @@ resource "aws_db_instance" "databasename_2" {
   engine = "mysql"
   instance_class = "db.t2.micro"
   allocated_storage = 5
-  availability_zone = "eu-west-2b"
+  availability_zone = "eu-east-1b"
   db_name = "database${count.index+1}"
   username = "admin"
   password = "password"
